@@ -5,80 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evil Month</title>
     <style>
-      html, body {
-          margin: 0; /* Remove default margin */
-          padding: 0; /* Remove default padding */
-          height: 100%; /* Ensure body and html take full height */
-      }
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            font-family: Arial, sans-serif;
+        }
 
-      body {
-          background-color: red;
-          font-family: Arial, sans-serif;
-          text-align: center; /* Center all text in the body */
-          display: flex; /* Use flexbox for centering */
-          flex-direction: column; /* Arrange children in a column */
-          align-items: center; /* Center children horizontally */
-          justify-content: center; /* Center children vertically */
-          min-height: 100vh; /* Ensure the body takes the full height */
-      }
+        body {
+            background-color: red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
 
-      header {
-          background-color: #333;
-          color: #fff;
-          padding: 10px;
-          width: 100%; /* Make the header full width */
-          box-sizing: border-box; /* Include padding in the width */
-      }
+        nav {
+            background-color: #555;
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            box-sizing: border-box; /* Include padding in the element's width */
+        }
 
-      nav {
-          background-color: #555;
-          width: 100%;
-          text-align: right;
-          padding: 10px 0;
-      }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-      nav a {
-          color: #fff;
-          margin: 0 15px;
-          text-decoration: none;
-          font-size: 20px;
-      }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-      nav a:hover {
-          text-decoration: underline;
-      }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box; /* Include padding in the element's width */
+        }
 
-      p {
-          font-size: 30px;
-      }
+        h1 {
+            margin: 0;
+        }
 
-      ul {
-          font-size: 20px;
-          padding: 20px; /* Add padding inside the box */
-          list-style: none; /* Remove default list style */
-          background-color: #333; /* Grey box background */
-          color: #fff; /* White text */
-          margin: 20px auto; /* Center the list horizontally with margin */
-          display: inline-block; /* Shrink to fit content */
-          border-radius: 5px; /* Optional: add rounded corners */
-          text-align: left; /* Align list items to the left */
-          max-width: 80%; /* Limit the width of the box */
-          box-sizing: border-box; /* Include padding and border in the width */
-      }
+        p {
+            font-size: 30px;
+            margin: 20px 20px 0 20px;
+            text-align: center;
+            box-sizing: border-box; /* Include padding in the element's width */
+        }
 
-      ul li {
-          display: list-item;
-          margin: 10px 0; /* Add space between the items */
-      }
+        ul {
+            font-size: 20px;
+            padding: 20px;
+            list-style: none;
+            background-color: #333;
+            color: #fff;
+            margin: 20px auto;
+            display: inline-block;
+            border-radius: 5px;
+            text-align: left;
+            max-width: 80%;
+            box-sizing: border-box; /* Include padding in the element's width */
+        }
 
-      ul li::before {
-          content: '•'; /* Add bullet point */
-          color: #fff; /* Change bullet color to white */
-          display: inline-block; /* Ensure bullet is inline with text */
-          width: 1em; /* Adjust width to position bullet */
-          margin-left: 1em; /* Position bullet to the left of the text */
-      }
+        ul li {
+            margin: 10px 0;
+        }
 
+        ul li::before {
+            content: '•';
+            color: #fff;
+            display: inline-block;
+            width: 1em;
+            margin-left: 0em;
+        }
     </style>
 </head>
 <body>
@@ -120,6 +131,8 @@
       <li>Zara tries to move to Shahriyar</li>
       <li>Zan is the only person with a girlfriend in the world of snakes</li>
       <li>Zan loses all music project files since 2021</li>
+      <li>Zan blunder saying Noah had pushed website when he hasn't</li>
+      <li>Zan is classified as obese once again</li>
     </ul>
 </body>
 </html>

@@ -7,12 +7,41 @@
     <style>
 
     header {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      text-align: right;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box; /* Include padding in the element's width */
+
+
     }
 
+    nav {
+        background-color: #555;
+        color: #fff;
+        width: 100%;
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        text-align: center;
+        box-sizing: border-box; /* Include padding in the element's width */
+
+    }
+
+
+
+      nav a {
+          color: #fff;
+          margin: 0 15px;
+          text-decoration: none;
+          font-size: 20px;
+      }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
     header a {
       color: #fff;
       text-decoration: none;
@@ -52,11 +81,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-  <header>
+  <nav>
        <a href="index.html">Home</a>
        <a href="evilmonth.html">Evil Month</a>
-       <a href="snakes.html">Evil Month</a>
-   </header>
+       <a href="snakes.html">List of Snakes</a>
+   </nav>
     <body style="background-color:powderblue;">
     <h1>Welcome to noahholm.com!</h1>
     <marquee scrollamount="20", behavior="alternate">Bingus Gang Forever</marquee>
