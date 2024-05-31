@@ -1,0 +1,46 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingus Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .counter {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="counter">
+        <h1>Number of Dates Zan & Bingus have been on:</h1>
+        <p> 1  </p>
+        <h1>Times Bingus has rescheduled next date:</h1>
+        <p id="counter"></p>
+        <h1>Number of Hugs Shared:</h1>
+        <p> 1 <p>
+        <h1>Number of Kisses Shared:</h1>
+        <p> 0 </p>
+    </div>
+
+    <script>
+        function updateCounter() {
+            const counterElement = document.getElementById('counter');
+            const currentTime = Math.floor(Date.now() / 1000);
+            counterElement.textContent = currentTime;
+        }
+
+        setInterval(updateCounter, 1000);
+        updateCounter();  // Initial call to display the counter immediately
+    </script>
+</body>
+</html>
