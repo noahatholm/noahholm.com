@@ -1,0 +1,15 @@
+p {
+    font-size: 30px;
+    margin: 20px 20px 0 20px;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in the element's width */
+}
+
+body {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}

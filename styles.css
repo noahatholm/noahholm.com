@@ -1,0 +1,120 @@
+nav {
+    background-color: #555;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in the element's width */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in the element's width */
+}
+
+h1 {
+    margin: 0;
+}
+
+
+
+ul {
+    font-size: 20px;
+    padding: 20px;
+    list-style: none;
+    background-color: #333;
+    color: #fff;
+    margin: 20px auto;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: left;
+    max-width: 80%;
+    box-sizing: border-box; /* Include padding in the element's width */
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+
+ul li::before {
+    content: '•';
+    color: #fff;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0em;
+}
+
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+/* Style for the footer */
+footer {
+ background-color: #333;
+ color: #fff;
+ text-align: center;
+ padding: 20px 0;
+}
+
+/* Style for the social buttons */
+.social-btn {
+ display: inline-block;
+ margin: 0 10px;
+ width: 40px;
+ height: 40px;
+ background-color: #555;
+ border-radius: 50%;
+ line-height: 40px;
+ font-size: 18px;
+ color: #fff;
+ text-decoration: none;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: Arial, sans-serif;
+}
+
+
+
