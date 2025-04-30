@@ -50,9 +50,9 @@ function update(number,date){
 
 setInterval(() => {
     update("1",Date.UTC(2024, 9, 4, 16, 0, 0)) // 4th Oct 2024, 16:00 GMT Zan
-    update("2",Date.UTC(2023, 4, 16, 0, 0, 0)) // 16th May 2023, 00:00 GMT Josh
+    update("2",Date.UTC(2025, 3, 15, 18, 0, 0)) // 15th April 2025, 18:00 GMT Josh
     update("5",Date.UTC(2006, 6, 6, 23, 12, 0)) // 6th July 2006, 23:12 GMT Shahriyar
 }, 1000);
 update("1",Date.UTC(2024, 9, 4, 16, 0, 0)) // 4th Oct 2024, 16:00 GMT
-update("2",Date.UTC(2023, 4, 16, 0, 0, 0)) // 16th May 2023, 00:00 GMT
+update("2",Date.UTC(2025, 3, 15, 18, 0, 0)) // 15th April 2025, 18:00 GMT Josh
 update("5",Date.UTC(2006, 6, 6, 23, 12, 0)) // 6th July 2006, 23:12 GMT Shahriyar
