@@ -4,8 +4,8 @@ const ctx = canvas.getContext('2d');
 let array;
 
 const size = 20;
-const width = 50;
-const height = 35;
+const width = 80;
+const height = 50;
 let gen = 0;
 
 function getRandomInt(max) {
