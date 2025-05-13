@@ -29,7 +29,6 @@ function createArray() {
             else { array[y][x] = 0; }
         }
     }
-    console.log(array);
     return neighbours;
 
 
@@ -153,7 +152,6 @@ async function main() {
 
     const slider = document.getElementById("slidy");
     const output = document.getElementById("speedo");
-    console.log(slider);
     output.innerHTML = slider.value; // Display the default slider value
     let delay = (101 - slider.value) * 10;
 
@@ -165,7 +163,6 @@ async function main() {
     }
 
     let neighbours = await createArray();
-    console.log(array);
     await sleep(delay);
     
     while (1) {
