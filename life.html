@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Conways Game of Life</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer> src = "scripts/life.js"</script>
+</head>
+
+
+
+<body>
+    <h1>Conways Game of Life</h1>
+    <div id="game">
+        <canvas id="gameCanvas" height="700" width="1000"></canvas>
+        <script src="scripts/life.js"></script>
+    </div>
+    <p id="iterations">Generation 0</p>
+    <p id="population">Population</p>
+    <p>Click the game to randomise</p>
+    <div id="speed">
+        <p id = "speedo">Speed: 50</p>
+        <input type="range" min="1" max="100" value="50" class="slider" id="slidy">
+
+    </div>
+    <div id="presets">
+        <h3>Preset Starts</h3>
+        <button onclick="customArray1()">Glider</button>
+        <button onclick="customArray2()">Acorn</button>
+    </div>
+</body>
+
+</html>
