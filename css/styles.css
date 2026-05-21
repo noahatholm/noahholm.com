@@ -1,123 +1,108 @@
-nav {
-    background-color: #555;
-    color: #fff;
-    width: 100%;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    text-align: center;
-    box-sizing: border-box; /* Include padding in the element's width */
+@font-face {
+    font-family: 'Univa Nova';
+    src: url('../fonts/UnivaNova-Bold.woff2') format('woff2');
+    font-weight: 700; 
+    font-style: normal;
 }
 
-html, body {
+:root {
+    --bg-color: #333;
+    --header-color: #d03c13;
+    --text-color: #ffffff;
+    --link-color: #0000ee;
+    --max-width: 700px; 
+    --font-family: monospace;
+}
 
-    margin: 0 auto; 
-    height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    font-family: Arial, sans-serif;
-    background-color:powderblue;
-    text-align: center;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    display: grid;
+    /* Fixed: removed the 's' from 800px */
+    grid-template-columns: 1fr minmax(0, 800px) 1fr;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    padding: 2rem;
+}
+
+/* Force direct children to stay in the middle column */
+body > * {
+    grid-column: 2;
+}
+
+
+
+h2 {
+    font-size: 18px;
+    color: var(--text-color);
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+
+
+h1, h2, h3 {
+    line-height: 1.2;
+    color: #fff;
 }
 
 
 
 
 
+h3 {
+    font-size: 16px;
+}
 
-nav a {
-    color: #fff;
-    margin: 0 15px;
+a {
+    color: #00bcd4; /* Cyan/Teal accent for links */
     text-decoration: none;
-    font-size: 20px;
 }
 
-nav a:hover {
+a:hover {
     text-decoration: underline;
 }
 
-header {
+hr {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 20px 0;
+}
+
+pre, code {
+    font-family: monospace;
     background-color: #333;
-    color: #fff;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+pre {
     padding: 10px;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box; /* Include padding in the element's width */
+    overflow-x: auto;
 }
-
-h1 {
-    margin: 0;
-}
-
-
 
 ul {
-    font-size: 20px;
-    padding: 20px;
-    list-style: none;
-    background-color: #333;
-    color: #fff;
-    margin: 20px auto;
-    display: inline-block;
-    border-radius: 5px;
-    text-align: left;
-    max-width: 80%;
-    box-sizing: border-box; /* Include padding in the element's width */
+    padding-left: 20px;
+    margin-bottom: 20px;
 }
 
-ul li {
-    margin: 10px 0;
+li {
+    margin-bottom: 5px;
 }
 
-
-ul li::before {
-    content: '•';
-    color: #fff;
-    display: inline-block;
-    width: 1em;
-    margin-left: 0em;
-}
-
-
-header a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-}
-
-header a:hover {
-  text-decoration: underline;
-}
-/* Style for the footer */
-footer {
- background-color: #333;
- color: #fff;
- text-align: center;
- padding: 20px 0;
-}
-
-/* Style for the social buttons */
-.social-btn {
- display: inline-block;
- margin: 0 10px;
- width: 40px;
- height: 40px;
- background-color: #555;
- border-radius: 50%;
- line-height: 40px;
- font-size: 18px;
- color: #fff;
- text-decoration: none;
-}
-
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    font-family: Arial, sans-serif;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
 }
 
 
 
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: 4px; 
+}
