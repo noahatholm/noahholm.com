@@ -26,10 +26,11 @@ body {
     padding: 2rem;
 }
 
-/* Force direct children to stay in the middle column */
 body > * {
     grid-column: 2;
 }
+
+
 
 
 

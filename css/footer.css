@@ -1,0 +1,34 @@
+footer {
+    text-align: center;
+    align-items: center;
+    border-top: 1px dashed var(--header-color);
+    
+    margin-top: 40px;
+    padding-top: 20px; 
+    line-height: 150%;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+
+.social-btn {
+    display: inline-flex;     /* Changed from inline-block to activate Flexbox */
+    justify-content: center;  /* Centers the icon horizontally */
+    align-items: center;      /* Centers the icon vertically */
+    
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #555;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+}
+
+.counter-error{
+    color: red;
+}
+
+.counter-success{
+    color: var(--text-color);
+}

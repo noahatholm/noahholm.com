@@ -18,6 +18,7 @@ class MyFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <footer>
+        <p id="view-counter" class="counter-error">Error fetching page views</p>
         <!-- Instagram Button -->
         <a href="https://www.instagram.com/noahatholm/?hl=en" class="social-btn" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-instagram"></i>
@@ -30,7 +31,8 @@ class MyFooter extends HTMLElement {
         <a href="https://github.com/noahatholm/noahholm.com" class="social-btn" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i>
         </a>
-        <p>© ${new Date().getFullYear()} My Portfolio</p>
+        <p>© Noah Holm 2024 - ${new Date().getFullYear()} | All Rights Reserved</p>
+        <p>GDPR Notice - This Website does not use cookies.🍪</p>
       </footer>
     `;
   }
