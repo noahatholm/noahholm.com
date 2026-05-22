@@ -1,13 +1,20 @@
 class MyHeader extends HTMLElement {
-  connectedCallback() {
+    connectedCallback() {
+
+    const homeUrl = this.getAttribute('home-url') || '/index.html';
+    const blogUrl = this.getAttribute('blog-url') || '/blog.html';
+    const snakesUrl = this.getAttribute('snakes-url') || '/snakes';
+    const lifeUrl = this.getAttribute('life-url') || '/life';
+
+
     this.innerHTML = `
       <header>
         <h1>Noah Holm</h1>
         <nav>
-            <a href="/">Home</a>
-            <a href="blog">Posts</a>
-            <a href="snakes">List of Snakes</a>
-            <a href="life">Game of Life</a>
+            <a href="${homeUrl}">Home</a>
+            <a href="${blogUrl}">Posts</a>
+            <a href="${snakesUrl}">List of Snakes</a>
+            <a href="${lifeUrl}">Game of Life</a>
         </nav>
       </header>
     `;
@@ -16,6 +23,9 @@ class MyHeader extends HTMLElement {
 
 class MyFooter extends HTMLElement {
   connectedCallback() {
+    const privacyUrl = this.getAttribute('privacy-url') || '/privacy.html';
+
+
     this.innerHTML = `
       <footer>
         <p id="view-counter" class="counter-error">Error fetching page views</p>
@@ -37,7 +47,7 @@ class MyFooter extends HTMLElement {
         </a>
         <p>© Noah Holm 2024 - ${new Date().getFullYear()} | All Rights Reserved</p>
         <p>GDPR Notice - This Website collects data</p>
-        <a href="privacy" class="link"><p>Privacy Policy</p></a>
+        <a href="${privacyUrl}" class="link"><p>Privacy Policy</p></a>
       </footer>
     `;
   }

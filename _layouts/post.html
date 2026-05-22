@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<main>
+  <article class="blog-post-content">
+    <h1 class="terminal-text">{{ page.title }}</h1>
+    <div class="blog-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %d, %Y" }}
+      </time>
+      <span class="separator">•</span>
+      <span class="reading-time">{{ page.reading_time }}</span>
+    </div>
+
+
+    <div class="entry-content">
+      {{ content }}
+    </div>
+
+    
+    <footer class="post-footer">
+      <a href="{% link blog.html %}" class="link">Back to posts</a>
+    </footer>
+  </article>
+</main>

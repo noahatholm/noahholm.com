@@ -1,15 +1,19 @@
-p {
-    font-size: 30px;
-    margin: 20px 20px 0 20px;
-    text-align: center;
-    box-sizing: border-box; /* Include padding in the element's width */
-}
 
 body {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+    
     background-color: lightgreen;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
+    
+    color: var(--text-color);
+    font-family: var(--font-family);
 }
+
+main {
+    grid-column: 2;
+    background-color: var(--bg-color);
+    padding: 2rem; 
+}
+
+
+

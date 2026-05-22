@@ -1,39 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-
-    <script src="/scripts/global-components.js" defer></script>
-    <script type="module" src ="/scripts/page-view.js"></script>
-
-    <title>Noah Home</title>
-    <link rel="icon" type="image/x-icon" href="/images/cat.ico">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
+---
+layout: default
+title: "Noah Home"
+---
+<main>
+  <h1 class="terminal-text">About Me</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue est, congue a bibendum nec, pretium porttitor sapien. Curabitur feugiat, lacus eget pellentesque dapibus, ex justo ultricies magna, eget egestas augue orci sit amet risus. Duis vel eros libero. Quisque aliquet eros vitae ex laoreet vestibulum.</p>
   
-    <my-header></my-header>
-
-    <h1 class="terminal-text">About Me</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue est, congue a bibendum nec, pretium porttitor sapien. Curabitur feugiat, lacus eget pellentesque dapibus, ex justo ultricies magna, eget egestas augue orci sit amet risus. Duis vel eros libero. Quisque aliquet eros vitae ex laoreet vestibulum. Nullam posuere lacus molestie placerat tincidunt. Vestibulum eget urna ut lorem tempor congue. Nullam id odio sit amet ipsum consequat auctor. Maecenas urna orci, dictum in molestie non, semper ac elit. Nunc dictum vehicula ornare.</p>
-    
-    <p>Maecenas sodales urna ut erat faucibus finibus. Phasellus rhoncus, risus in maximus vehicula, ipsum urna malesuada sapien, et iaculis magna orci quis erat. Vestibulum vel suscipit magna, sit amet pharetra nisl. Vivamus maximus arcu purus, quis vulputate nisi bibendum ut. Nullam tincidunt, nunc eu eleifend vulputate, elit dui maximus urna, non dapibus leo tortor sed nulla. Vestibulum suscipit sagittis sollicitudin. Aenean aliquet in ante ac faucibus. Maecenas placerat lobortis dolor ac viverra. Suspendisse eget ornare lectus. Suspendisse sed nisl nec elit sodales molestie vitae vitae neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-    
+  <p>Maecenas sodales urna ut erat faucibus finibus. Phasellus rhoncus, risus in maximus vehicula, ipsum urna malesuada sapien, et iaculis magna orci quis erat. Vestibulum vel suscipit magna, sit amet pharetra nisl.</p>
+  <div>
     <h1 class="terminal-text">Projects</h1>
     <p>A selection of my favourite projects:</p>
 
-    <a href="/projects/memories" class="markdown-text">
-      <h2 >Memories</h2>
+    <a href="{{ '/projects/memories' | relative_url }}" class="markdown-text">
+      <h2>Memories</h2>
     </a>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue est, congue a bibendum nec, pretium porttitor sapien. Curabitur feugiat, lacus eget pellentesque dapibus, ex justo ultricies magna.</p>
 
-    <a href="projects" class="link"><p>Even More Projects!</p></a>
+    <a href="{{ '/projects' | relative_url }}" class="link"><p>Even More Projects!</p></a>
+  </div>
 
-    <my-footer></my-footer>
-</body>
-</html>
+  <br>
+
+  <div>
+    <h1 class="terminal-text">Blog Posts</h1>
+    <p>Some of my favourite posts:</p>
+
+    <div class="favourite-posts">
+    {% assign has_favourites = false %}
+
+    {% for post in site.posts %}
+      {% if post.favourite == true %}
+        {% assign has_favourites = true %}
+        <a href="{{ post.url | relative_url }}" class="markdown-text">
+          <h2>{{ post.title }}</h2>
+        </a>
+        <p class="blog-desc">{{ post.description }}</p>
+
+        <div>
+        <p class="secondary-color">
+            <time>{{ post.date | date: "%d %B, %Y" }}</time>
+            <span class="separator">•</span>
+            <span class="reading-time">{{ post.reading_time }}</span>
+        </p>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {% if has_favourites == false %}
+      <p class="text-muted">No featured posts pinned just yet.</p>
+    {% endif %}
+  </div>
+  </div>
+
+</main>

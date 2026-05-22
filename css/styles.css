@@ -15,7 +15,7 @@
     --header-color: #d03c13;
     --secondary-color: #2ecc71;
     --text-color: #ffffff;
-    --max-width: 700px; 
+    --max-width: 1000px; 
     --font-family: monospace;
 }
 
@@ -23,7 +23,6 @@
 
 body {
     display: grid;
-    /* Fixed: removed the 's' from 800px */
     grid-template-columns: 1fr minmax(0, 1000px) 1fr;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -65,12 +64,13 @@ h3.default{
 p {
     font-size: 15px;
     line-height: 125%;
-    margin-bottom: 2.5rem; 
+    margin-bottom: 2rem; 
 }
 
-p:last-of-type {
-  margin-bottom: 1rem;
+p.secondary-color{
+    color: var(--header-color);
 }
+
 
 
 hr {
@@ -188,3 +188,27 @@ a.markdown-text:hover h2 {
     color: var(--header-color);
     filter: brightness(90%);
 }
+
+
+.box-list ul{
+    font-size: 20px;
+    padding: 20px;
+    list-style: none;
+    background-color: #333;
+    color: #fff;
+    margin: 20px auto;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: left;
+    max-width: 80%;
+    box-sizing: border-box; /* Include padding in the element's width */
+}
+
+
+ul.box-list li{
+    margin: 10px 0;
+}
+
+
+
+
