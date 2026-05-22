@@ -1,47 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Noah Holm :)</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
-  <nav>
-       <a href="index">Home</a>
-       <a href="evilmonth">Evil Month</a>
-       <a href="snakes">List of Snakes</a>
-       <a href="life">Game of Life</a>
-   </nav>
-    <h1>Welcome to noahholm.com!</h1>
-    <marquee scrollamount="20", behavior="alternate">Bingus Gang Forever</marquee>
+---
+layout: default
+title: "Noah Home"
+---
+<main>
+  <h1 class="terminal-text">About Me</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue est, congue a bibendum nec, pretium porttitor sapien. Curabitur feugiat, lacus eget pellentesque dapibus, ex justo ultricies magna, eget egestas augue orci sit amet risus. Duis vel eros libero. Quisque aliquet eros vitae ex laoreet vestibulum.</p>
+  
+  <p>Maecenas sodales urna ut erat faucibus finibus. Phasellus rhoncus, risus in maximus vehicula, ipsum urna malesuada sapien, et iaculis magna orci quis erat. Vestibulum vel suscipit magna, sit amet pharetra nisl.</p>
+  
+  <br><br>
+  
+  <div>
+    <h1 class="terminal-text">Projects</h1>
+    <p>A selection of my favourite projects:</p>
+    <div class="favourite-posts">
+      {% assign has_favourites = false %}
 
-    <p>I love Zan ul-haq!</p>
-    <a href="https://github.com/noahatholm/romzimonitor" target="_blank">
-        <img src="/images/pczi.png" alt="Me Creating Website" style="display: block;">
-        <small>Click me</small>
-    </a>
+      {% for project in site.projects %}
+        {% if project.favourite == true %}
+          {% assign has_favourites = true %}
+            <article class="project-item">
+                <a href="{{ project.url }}" class="markdown-text">
+                    <h2>{{ project.title }}</h2>
+                </a>
+                <p class="project-brief">{{ project.brief }}</p>
+                <p class="project-desc">{{ project.description }}</p>
+            </article>
+        {% endif %}
+      {% endfor %}
 
+      {% if has_favourites == false %}
+        <p class="text-muted">No favourite projects just yet.</p>
+      {% endif %}
+    </div>
 
+    <a href="{{ '/projects' | relative_url }}" class="link"><p>Even More Projects!</p></a>
+  </div>
 
+  <br><br>
 
-    <img src="/images/bandrew.png" alt="This Cool MF" style="display: block;"></img>
+  <div>
+    <h1 class="terminal-text">Blog Posts</h1>
+    <p>Some of my favourite posts:</p>
 
+    <div class="favourite-posts">
+      {% assign has_favourites = false %}
 
-<footer>
-      <!-- Instagram Button -->
-      <a href="https://www.instagram.com/noahatholm/?hl=en" class="social-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <!-- Steam Button -->
-      <a href="https://steamcommunity.com/id/noahatholm/" class="social-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-steam"></i>
-      </a>
-      <!-- GitHub Button -->
-      <a href="https://github.com/noahatholm/noahholm.com" class="social-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-github"></i>
-      </a>
-</footer>
-</body>
-</html>
+      {% for post in site.posts %}
+        {% if post.favourite == true %}
+          {% assign has_favourites = true %}
+          <a href="{{ post.url | relative_url }}" class="markdown-text">
+            <h2>{{ post.title }}</h2>
+          </a>
+          <p class="blog-desc">{{ post.description }}</p>
+
+          <div>
+          <p class="secondary-color">
+              <time>{{ post.date | date: "%d %B, %Y" }}</time>
+              <span class="separator">•</span>
+              <span class="reading-time">{{ post.reading_time }}</span>
+          </p>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      {% if has_favourites == false %}
+        <p class="text-muted">No featured posts pinned just yet.</p>
+      {% endif %}
+    </div>
+    <a href="{{ '/projects' | relative_url }}" class="link"><p>All Posts!</p></a>
+
+  </div>
+
+</main>

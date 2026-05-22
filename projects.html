@@ -1,0 +1,28 @@
+---
+layout: default
+title: "Noah Projects"
+---
+<main>
+<h1 class="terminal-text">Projects</h1>    
+
+<div class="projects-list">
+    <!-- Filter out projects without no order tag -->
+    {% assign filtered_projects = site.projects | where_exp:"item", "item.order != nil" %}
+    
+    
+    <!-- Sort the projects by their order value -->
+    {% assign sorted_projects = filtered_projects | sort: "order" %}
+
+    {% for project in sorted_projects %}
+    <article class="project-item">
+        <a href="{{ project.url }}" class="markdown-text">
+            <h2>{{ project.title }}</h2>
+        </a>
+        <p class="project-brief">{{ project.brief }}</p>
+        <p class="project-desc">{{ project.description }}</p>
+    </article>
+    {% endfor %}
+</div>
+</main>
+
+

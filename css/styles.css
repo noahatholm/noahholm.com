@@ -1,57 +1,215 @@
-nav {
-    background-color: #555;
-    color: #fff;
-    width: 100%;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    text-align: center;
-    box-sizing: border-box; /* Include padding in the element's width */
+@font-face {
+    font-family: 'Univa Nova';
+    src: url('../fonts/UnivaNova-Bold.woff2') format('woff2');
+    font-weight: 700; 
+    font-style: normal;
 }
 
-html, body {
+@font-face {
+    font-family: 'UbuntuMono';
+    src: url('../fonts/UbuntuMono-Regular.woff2') format('woff2');
+}
 
-    margin: 0 auto; 
-    height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    font-family: Arial, sans-serif;
-    background-color:powderblue;
-    text-align: center;
+:root {
+    --bg-color: #333;
+    --header-color: #d03c13;
+    --secondary-color: #2ecc71;
+    --text-color: #ffffff;
+    --max-width: 1000px; 
+    --font-family: monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    padding: 2rem;
+}
+
+body > * {
+    grid-column: 2;
 }
 
 
-
-
-
-
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box; /* Include padding in the element's width */
-}
-
+/* --- Core Section Headings (~$ About Me, ~$ Projects, etc.) --- */
 h1 {
-    margin: 0;
+    color: var(--header-color);
+    font-weight: inherit;
+    font-size: 32px;
+    margin-top: 4rem;   
+    margin-bottom: 1.5rem;  
+}
+
+/* Ensure the very first section heading doesn't have double padding at the top */
+main > h1:first-of-type {
+    margin-top: 1rem;
+}
+
+/* --- Project and Post Titles (> Memories, > List of Snakes) --- */
+h2 {
+    color: var(--secondary-color);
+    font-weight: inherit;
+    font-size: 25px;
+    margin-top: 2rem;      
+    margin-bottom: 0.25rem; 
+}
+
+/* --- Secondary Titles / Subheadings --- */
+h3 {
+    font-size: 18px;
+    color: var(--header-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h3.default {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+/* --- Body Text Formatting --- */
+p {
+    font-size: 17px;
+    line-height: 1.5;       
+    margin-bottom: 1rem;    
+}
+
+.blog-meta, .post-date {
+    font-size: 14px;
+    color: var(--header-color);
+    margin-top: 0.25rem;
+    margin-bottom: 0.7rem;
+}
+
+main > a.link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 
+hr {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 20px 0;
+}
+
+pre, code {
+    font-family: monospace;
+    background-color: #333;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+pre {
+    padding: 10px;
+    overflow-x: auto;
+}
 
 ul {
+
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+}
+
+
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: 4px; 
+}
+
+a.link {
+    color: var(--header-color);
+
+}
+
+a.link:hover{
+    text-decoration: underline;
+    filter: brightness(90%);
+}
+
+.terminal-text{
+    font-family: UbuntuMono;
+}
+
+h1.terminal-text{
+    margin-bottom: 1.5rem;
+}
+
+.terminal-text::before{
+    content: "~$";
+    font-size: 80%;
+    padding-right: 5px;
+    display: inline-block; 
+    transform: translateY(-2px);
+}
+
+.terminal-text::after {
+  content: "_";
+  font-weight: inherit;
+  animation: blink 1s step-start infinite;
+  font-family: var(--font-family);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.markdown-text{
+    font-family: UbuntuMono;
+
+}
+
+/* Update your CSS to this */
+
+.markdown-text {
+    text-decoration: none;
+    display: inline-flex; 
+    align-items: center; 
+    color: var(--secondary-color) 
+}
+
+.markdown-text::before {
+    content: ">";
+    margin-right: 10px; 
+    font-size: 150%;  
+}
+
+.markdown-text h2 {
+    margin: 0;
+    color: inherit;
+    display: inline;
+}
+
+a.markdown-text:hover h2 {
+    color: var(--header-color);
+    filter: brightness(90%);
+}
+
+
+.box-list ul{
     font-size: 20px;
     padding: 20px;
     list-style: none;
@@ -65,59 +223,11 @@ ul {
     box-sizing: border-box; /* Include padding in the element's width */
 }
 
-ul li {
+
+ul.box-list li{
     margin: 10px 0;
 }
 
-
-ul li::before {
-    content: '•';
-    color: #fff;
-    display: inline-block;
-    width: 1em;
-    margin-left: 0em;
-}
-
-
-header a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-}
-
-header a:hover {
-  text-decoration: underline;
-}
-/* Style for the footer */
-footer {
- background-color: #333;
- color: #fff;
- text-align: center;
- padding: 20px 0;
-}
-
-/* Style for the social buttons */
-.social-btn {
- display: inline-block;
- margin: 0 10px;
- width: 40px;
- height: 40px;
- background-color: #555;
- border-radius: 50%;
- line-height: 40px;
- font-size: 18px;
- color: #fff;
- text-decoration: none;
-}
-
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    font-family: Arial, sans-serif;
-}
 
 
 
