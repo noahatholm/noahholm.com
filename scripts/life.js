@@ -58,6 +58,7 @@ function customArray1() {
     array[middleY + 2][middleX] = 1;
     array[middleY + 1][middleX - 1] = 1;
     array[middleY + 2][middleX + 1] = 1;
+    setGen(0);
 }
 
 function customArray2() {
@@ -72,6 +73,7 @@ function customArray2() {
     array[middleY + 2][middleX + 3] = 1;
     array[middleY + 2][middleX + 4] = 1;
     array[middleY + 2][middleX + 5] = 1;
+    setGen(0);
 }
 
 function draw() {
@@ -152,7 +154,7 @@ async function main() {
 
     const slider = document.getElementById("slidy");
     const output = document.getElementById("speedo");
-    output.innerHTML = slider.value; // Display the default slider value
+    output.innerHTML = "Speed: " + slider.value; // Display the default slider value
     let delay = (101 - slider.value) * 10;
 
     // Update the current slider value (each time you drag the slider handle)

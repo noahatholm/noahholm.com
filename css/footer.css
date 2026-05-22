@@ -1,16 +1,19 @@
 footer {
     text-align: center;
     align-items: center;
+    font-size: 18px;
+}
+
+.my-footer {
     border-top: 1px dashed var(--header-color);
     
     margin-top: 40px;
     padding-top: 20px; 
     line-height: 150%;
     color: var(--text-color);
-    font-size: 18px;
 }
 
-footer p {
+.my-footer p {
     font-size: 15px;
     line-height: 125%;
     margin-bottom: 0.25rem; 

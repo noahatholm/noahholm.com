@@ -35,42 +35,61 @@ body > * {
 }
 
 
-
+/* --- Core Section Headings (~$ About Me, ~$ Projects, etc.) --- */
 h1 {
     color: var(--header-color);
     font-weight: inherit;
+    font-size: 32px;
+    margin-top: 4rem;   
+    margin-bottom: 1.5rem;  
 }
 
+/* Ensure the very first section heading doesn't have double padding at the top */
+main > h1:first-of-type {
+    margin-top: 1rem;
+}
+
+/* --- Project and Post Titles (> Memories, > List of Snakes) --- */
 h2 {
-    font-size: 25px;
     color: var(--secondary-color);
-    margin-top: 2rem; 
     font-weight: inherit;
-
+    font-size: 25px;
+    margin-top: 2rem;      
+    margin-bottom: 0.25rem; 
 }
 
+/* --- Secondary Titles / Subheadings --- */
 h3 {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--header-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-h3.default{
-    font-size: 16px;
+h3.default {
+    font-size: 18px;
     color: var(--text-color);
 }
 
-
-
+/* --- Body Text Formatting --- */
 p {
-    font-size: 15px;
-    line-height: 125%;
-    margin-bottom: 2rem; 
+    font-size: 17px;
+    line-height: 1.5;       
+    margin-bottom: 1rem;    
 }
 
-p.secondary-color{
+.blog-meta, .post-date {
+    font-size: 14px;
     color: var(--header-color);
+    margin-top: 0.25rem;
+    margin-bottom: 0.7rem;
 }
 
+main > a.link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
 
 
 hr {

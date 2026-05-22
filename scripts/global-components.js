@@ -3,8 +3,8 @@ class MyHeader extends HTMLElement {
 
     const homeUrl = this.getAttribute('home-url') || '/index.html';
     const blogUrl = this.getAttribute('blog-url') || '/blog.html';
-    const snakesUrl = this.getAttribute('snakes-url') || '/snakes';
-    const lifeUrl = this.getAttribute('life-url') || '/life';
+    const projectsUrl = this.getAttribute('projects-url') || '/projects';
+    const visitorUrl = this.getAttribute('visitor-url') || '/visitor-map';
 
 
     this.innerHTML = `
@@ -13,8 +13,8 @@ class MyHeader extends HTMLElement {
         <nav>
             <a href="${homeUrl}">Home</a>
             <a href="${blogUrl}">Posts</a>
-            <a href="${snakesUrl}">List of Snakes</a>
-            <a href="${lifeUrl}">Game of Life</a>
+            <a href="${projectsUrl}">Projects</a>
+            <a href="${visitorUrl}">Visitor Map</a>
         </nav>
       </header>
     `;
@@ -27,15 +27,11 @@ class MyFooter extends HTMLElement {
 
 
     this.innerHTML = `
-      <footer>
+      <footer class="my-footer">
         <p id="view-counter" class="counter-error">Error fetching page views</p>
         <!-- Linkedin Button -->
         <a href="https://www.linkedin.com/in/noah-holm/" class="social-btn" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-linkedin"></i>
-        </a>
-        <!-- Instagram Button -->
-        <a href="https://www.instagram.com/noahatholm/?hl=en" class="social-btn" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-instagram"></i>
         </a>
         <!-- Steam Button -->
         <a href="https://steamcommunity.com/id/noahatholm/" class="social-btn" target="_blank" rel="noopener noreferrer">

@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
+---
+layout: projects
+title: "Conways Game of Life"
+brief: "Simple javascript implementation of conways game of life"
+description: "Was procrastinating studying for exams in may 2025, built this one evening after watching a youtube video about it."
+order: 10
+favourite: false
+---
 <head>
-    <meta charset="utf-8">
-    <title>Conways Game of Life</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script defer> src = "scripts/life.js"</script>
+    <script src="{{ '/scripts/life.js' | relative_url }}" defer></script>
+    <link rel="stylesheet" href="{{ '/css/gol.css' | relative_url }}">
+
 </head>
-
-
-
-<body>
-    <h1>Conways Game of Life</h1>
+<main>
     <div id="game">
         <canvas id="gameCanvas" height="700" width="1000"></canvas>
         <script src="scripts/life.js"></script>
@@ -31,6 +31,4 @@
             <button onclick="customArray2()">Acorn</button>
         </div>
     </div>
-</body>
-
-</html>
+</main>
