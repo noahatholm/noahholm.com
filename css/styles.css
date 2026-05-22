@@ -5,11 +5,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'UbuntuMono';
+    src: url('../fonts/UbuntuMono-Regular.woff2') format('woff2');
+}
+
 :root {
     --bg-color: #333;
     --header-color: #d03c13;
+    --secondary-color: #2ecc71;
     --text-color: #ffffff;
-    --link-color: #0000ee;
     --max-width: 700px; 
     --font-family: monospace;
 }
@@ -19,7 +24,7 @@
 body {
     display: grid;
     /* Fixed: removed the 's' from 800px */
-    grid-template-columns: 1fr minmax(0, 800px) 1fr;
+    grid-template-columns: 1fr minmax(0, 1000px) 1fr;
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-family);
@@ -32,38 +37,41 @@ body > * {
 
 
 
-
+h1 {
+    color: var(--header-color);
+    font-weight: inherit;
+}
 
 h2 {
-    font-size: 18px;
-    color: var(--text-color);
-    padding-bottom: 5px;
-    margin-top: 40px;
+    font-size: 25px;
+    color: var(--secondary-color);
+    margin-top: 2rem; 
+    font-weight: inherit;
+
 }
-
-
-
-h1, h2, h3 {
-    line-height: 1.2;
-    color: #fff;
-}
-
-
-
-
 
 h3 {
     font-size: 16px;
+    color: var(--header-color);
 }
 
-a {
-    color: #00bcd4; /* Cyan/Teal accent for links */
-    text-decoration: none;
+h3.default{
+    font-size: 16px;
+    color: var(--text-color);
 }
 
-a:hover {
-    text-decoration: underline;
+
+
+p {
+    font-size: 15px;
+    line-height: 125%;
+    margin-bottom: 2.5rem; 
 }
+
+p:last-of-type {
+  margin-bottom: 1rem;
+}
+
 
 hr {
     border: 0;
@@ -84,6 +92,7 @@ pre {
 }
 
 ul {
+
     padding-left: 20px;
     margin-bottom: 20px;
 }
@@ -91,6 +100,8 @@ ul {
 li {
     margin-bottom: 5px;
 }
+
+
 
 img {
     max-width: 100%;
@@ -106,4 +117,74 @@ img {
     height: auto; 
     display: block; 
     border-radius: 4px; 
+}
+
+a.link {
+    color: var(--header-color);
+
+}
+
+a.link:hover{
+    text-decoration: underline;
+    filter: brightness(90%);
+}
+
+.terminal-text{
+    font-family: UbuntuMono;
+}
+
+h1.terminal-text{
+    margin-bottom: 1.5rem;
+}
+
+.terminal-text::before{
+    content: "~$";
+    font-size: 80%;
+    padding-right: 5px;
+    display: inline-block; 
+    transform: translateY(-2px);
+}
+
+.terminal-text::after {
+  content: "_";
+  font-weight: inherit;
+  animation: blink 1s step-start infinite;
+  font-family: var(--font-family);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.markdown-text{
+    font-family: UbuntuMono;
+
+}
+
+/* Update your CSS to this */
+
+.markdown-text {
+    text-decoration: none;
+    display: inline-flex; 
+    align-items: center; 
+    color: var(--secondary-color) 
+}
+
+.markdown-text::before {
+    content: ">";
+    margin-right: 10px; 
+    font-size: 150%;  
+}
+
+.markdown-text h2 {
+    margin: 0;
+    color: inherit;
+    display: inline;
+}
+
+a.markdown-text:hover h2 {
+    color: var(--header-color);
+    filter: brightness(90%);
 }

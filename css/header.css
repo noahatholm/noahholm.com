@@ -21,6 +21,7 @@ header nav a {
     color: var(--text-color);
     font-family: 'Univa Nova';
     margin: 15px;
+    text-decoration: none;
 }
 
 header nav a:hover {

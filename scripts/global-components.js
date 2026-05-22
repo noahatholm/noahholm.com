@@ -4,8 +4,8 @@ class MyHeader extends HTMLElement {
       <header>
         <h1>Noah Holm</h1>
         <nav>
-            <a href="index">Home</a>
-            <a href="evilmonth">Evil Month</a>
+            <a href="/">Home</a>
+            <a href="blog">Posts</a>
             <a href="snakes">List of Snakes</a>
             <a href="life">Game of Life</a>
         </nav>
@@ -19,6 +19,10 @@ class MyFooter extends HTMLElement {
     this.innerHTML = `
       <footer>
         <p id="view-counter" class="counter-error">Error fetching page views</p>
+        <!-- Linkedin Button -->
+        <a href="https://www.linkedin.com/in/noah-holm/" class="social-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+        </a>
         <!-- Instagram Button -->
         <a href="https://www.instagram.com/noahatholm/?hl=en" class="social-btn" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-instagram"></i>
@@ -32,7 +36,8 @@ class MyFooter extends HTMLElement {
             <i class="fab fa-github"></i>
         </a>
         <p>© Noah Holm 2024 - ${new Date().getFullYear()} | All Rights Reserved</p>
-        <p>GDPR Notice - This Website does not use cookies.🍪</p>
+        <p>GDPR Notice - This Website collects data</p>
+        <a href="privacy" class="link"><p>Privacy Policy</p></a>
       </footer>
     `;
   }

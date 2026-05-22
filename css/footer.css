@@ -10,6 +10,12 @@ footer {
     font-size: 18px;
 }
 
+footer p {
+    font-size: 15px;
+    line-height: 125%;
+    margin-bottom: 0.25rem; 
+}
+
 
 .social-btn {
     display: inline-flex;     /* Changed from inline-block to activate Flexbox */
