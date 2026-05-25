@@ -27,6 +27,7 @@ async function recordPageView() {
     const userCity = data.city;
     const lat = data.latitude;
     const lon = data.longitude;
+    const referrer = document.referrer;
 
     //Call supabase RPC
     await supabase.rpc('increment_view', {
@@ -36,7 +37,8 @@ async function recordPageView() {
         p_country: userCountry,
         p_city: userCity,
         p_lat: lat,
-        p_lon: lon
+        p_lon: lon,
+        p_referrer: referrer
     });
 
 }
