@@ -132,10 +132,55 @@ img {
 
 
 img { 
-    max-width: 100%; 
+    max-width: 75%; 
     height: auto; 
     display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
     border-radius: 4px; 
+}
+
+
+@media (min-width: 600px) {
+    .portrait-block {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem; /* The whitespace gap between your text and your photo */
+        margin-bottom: 1.5rem;
+    }
+
+    .portrait-block p {
+        flex: 1; /* Allows the paragraph text to fill out the remaining left space */
+        margin-bottom: 0;
+    }
+
+    img.img-portrait-right {
+        max-width: 300px; /* Restricts the tall portrait image from blowing up too big */
+        display: inline;
+        object-fit: cover;
+    }
+}
+
+/* --- Double Landscape Image Grid --- */
+.image-grid-two {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacks full-width on mobile screens */
+    gap: 1rem;                  /* Clean whitespace gap between the two images */
+    margin: 1.5rem 0;           /* Balanced spacing above and below the grid block */
+    width: 100%;
+}
+
+/* Desktop override to split them evenly side-by-side */
+@media (min-width: 600px) {
+    .image-grid-two {
+        grid-template-columns: 1fr 1fr; /* Splits the container into 2 equal columns */
+    }
+    
+    /* Safely overrides your global 75% max-width and centering rule for this grid only */
+    .image-grid-two img {
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
 }
 
 a.link {

@@ -1,0 +1,42 @@
+/* --- Global Table Styling --- */
+table.tournament-groups {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-family: var(--font-family); /* Forces your site's monospace styling */
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Header styling using your signature orange color token */
+table.tournament-groups th {
+    color: var(--header-color);
+    font-size: 18px;
+    font-weight: normal;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid var(--header-color);
+}
+
+/* Table cells structure formatting */
+table.tournament-groups td {
+    padding: 12px;
+    color: var(--text-color);
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Align and format the small university logo markers neatly inside rows */
+table.tournament-groups td img {
+    max-width: 24px !important; /* Forces uniform icon restrictions */
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 0px; /* Overrides global paragraph bottom margins */
+}
+
+/* Subtle row hover state matching your system theme */
+table.tournament-groups tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
