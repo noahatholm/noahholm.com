@@ -276,3 +276,27 @@ ul.box-list li{
 
 
 
+.three-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    list-style-type: disc;
+    padding-left: 1.25rem; /* Moves the bullets cleanly inward */
+    margin: 1.5rem 0;
+    font-family: var(--font-family), monospace; /* Matches your portfolio look */
+    font-size: 16px;
+    line-height: 2; /* Creates comfortable vertical line height spacing */
+}
+
+/* Forces each list item to take up exactly 1/3 of the row width on desktop */
+.three-grid li {
+    flex: 0 0 33.333%; 
+    color: var(--text-color, #ffffff);
+    box-sizing: border-box;
+    padding-right: 1rem;
+}
+
+@media (max-width: 650px) {
+    .three-grid li {
+        flex: 0 0 100%; /* Stacks beautifully full-width on mobile */
+    }
+}
