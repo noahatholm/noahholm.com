@@ -1,11 +1,99 @@
 ---
 layout: projects
 title: "Memories"
-brief: "A fullstack AI driven cloud media storage system. University Group Project"
-description: "My Second year group project at the University of Nottingham, Sponsored by Kainos. My Role was team admin and this involved me designing the project, choosing the technical stack, managing scrum's and infastructure (docker & AWS). I did significant work on the backend buisness logic and apis. I designed and implemented the two algorithms that deliver the main functionality of the project."
+brief: "A fullstack AI-driven cloud media storage system. University Group Project"
+description: "My second-year group project at the University of Nottingham, sponsored by Kainos. My role was Team Admin, which involved me designing the project, choosing the technical stack, managing scrums, and handling infrastructure (Docker & AWS). I did significant work on the backend business logic and APIs, and I designed and implemented the two algorithms that deliver the main functionality of the project."
 order: 1
 favourite: true
 ---
 <main>
+    <h1><a class="link" href="https://github.com/noahatholm/memories">Github</a></h1>
+
+    <h2>Project Proposal</h2>
+    <p>In second year at the University of Nottingham, all computer science students are required to participate in a group project that spans the entire year and is worth 20 credits overall. The projects are decided by a series of industry partners and internal stakeholders.</p>
+    <p>In September, we were assigned our randomly allocated group, which consisted of eight students in total. This was given to us in the form of an email containing the names of our teammates. I subsequently reached out and arranged a "pub trip" for us all to meet up, nothing technical.</p>
+
+    <p>Following our pub trip, we were tasked with choosing roles amongst ourselves. The three roles were Team Leader, Team Admin, and Git Admin. I knew that I wanted to go for a role but was split between Leader and Admin. However, after reading the project handbook, I came to the conclusion that Leader had no official responsibilities and was just a formality, whereas the Admin was responsible for submitting all reports, bidding for projects, communicating with stakeholders, and more. From this, I made the decision that Team Admin was the most important role overall, so I applied for it. Fortunately, I was voted in by my peers.</p>
+
+    <p>The next step was to bid for our project. Prior to bidding, all project briefs are made available online for us to read and decide which ones we prefer. Next, the Team Admin has to pick three projects on a first come, first served basis, using a Moodle quiz that opens at 9AM (Fortunately, my concert ticket buying experience came in clutch here). This was stressful, but I managed to get two of our first choices, leaving us with Memories, UniDays GO, and Quantum Tetris.</p>
+
+    <p>Now that we had chosen our projects, we still needed to create a pitch for each one, which included a short video and a document explaining why we wanted the project and our execution plan. This was then presented to the project sponsors, who would choose which group they'd like to carry out the project. As you can tell, we were chosen for Memories.</p>
+
+    <h2>Project Planning</h2>
+    <p>Now that we had our project secured, we had to plan out the functional and non-functional requirements, as well as our technical stack:</p>
+    <ul>
+        <li>Backend: Python (the go-to language for ML and AI)
+            <ul>
+                <li>Python 3.11 (chosen because of NumPy V2 compatibility)</li>
+                <li>FastAPI (performance and lightweight)</li>
+                <li>Multiple ML and non-ML methods used for data extraction:
+                    <ul>
+                        <li>Image Classification CNN</li>
+                        <li>Emotion Detection ViT</li>
+                        <li>Facial Recognition MTCNN</li>
+                        <li>Facial Embedding CNN</li>
+                        <li>Optical Character Recognition CRNN</li>
+                        <li>Metadata Extraction</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Frontend: React.js (widely used)</li>
+        <li>Database: Supabase (free, hosted, and has vector support)</li>
+        <li>Deployment:
+            <ul>
+                <li>Reverse Proxy: NGINX</li>
+                <li>Virtualization: Docker</li>
+                <li>Image Storage: AWS S3</li>
+                <li>Hosting: AWS EC2</li>
+                <li>CDN: AWS CloudFront</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Development</h2>
+    <p>I chose a Scrumban development methodology that combines the iterative sprints from Scrum with the continuous workflow of Kanban. This worked really well using 2 week sprints, with each one having its own goals and subgoals.</p>
+
+    <img src="{{ '/images/memories/sprint-board.png' | relative_url }}" alt="Scrumban Board">
+
+    <p>I primarily worked on the backend logic and deployment, which admittedly included a lot of trivial API calls, so I'm only going to talk about the bespoke (and more interesting) things I worked on.</p>
     
+    <h3>Tagging Algorithm</h3>
+    <p>Having implemented all the AI methods listed above, I needed a way to call them all on a single image and collect the returned data. Here, I used a heavily object-oriented approach to encapsulate all the separate methods into a single class called Tagger.</p>
+    <img src="{{ '/images/memories/tagger.png' | relative_url }}" alt="Tagging Algorithm">
+    <p>To run this safely, I used a producer consumer design pattern to ensure that only one tagging job happens at a time. Because it is highly resource intensive, a lot of concurrent calls would cause us to run out of memory and CPU, freezing the website and making it unresponsive. The one problem is that despite running it in a separate user thread using asyncio, it is still locked to a single system thread due to Python's GIL. To reimplement this in the future, I would make it a separate process that runs on its own core and communicates using a message queue.</p>
+
+    <h3>Categorising Algorithm</h3>
+    <p>All extracted data now needs to be processed to cluster images into "memory boxes". This clustering is based on shared individuals, locations, dates, emotions, and other embedded metadata.</p>
+    <p>I began by writing out four key requirements that the algorithm needed to achieve:</p>
+    <ol>
+        <li>The algorithm should be run on one image at a time immediately after upload.</li>
+        <li>It must place the image into existing boxes and/or create new boxes for the image and related images if a matching box doesn’t exist yet.</li>
+        <li>The types of boxes it creates are location, emotion, face, season, and date.</li>
+        <li>A new box shouldn't be created unless it contains at least three images.</li>
+    </ol>
+    <img src="{{ '/images/memories/categoriser.png' | relative_url }}" alt="Categorising Algorithm">
+
+
+    <h3>Deployment</h3>
+    <p>The project was containerised into three separate containers: Backend, Frontend, and App ( handles SSL and NGINX).</p>
+    <p>Subsequently, this architecture made it incredibly easy to deploy on an AWS EC2 instance. I made use of the AWS Free Tier and promotional credits, which gave us more than enough overhead to host the site for the entire duration of the academic project without incurring costs.</p>
+    <p>I also purchased the official domain <a class="link" href="https://www.yourmemories.app/">www.yourmemories.app</a> for the live launch, though I'm still deciding on how long I'll it hosted.</p>
+
+    <h2>Evaluation</h2>
+    <p>Overall, this project was a fantastic experience. It dramatically leveled up my skills as a developer, and I learned an immense amount particularly when it came to configuring cloud infrastructure. Being able to talk about the system architecture extensively in technical interviews has been invaluable, and I honestly doubt I would have landed my upcoming software engineering opportunities without it.</p>
+
+    <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0; border-radius: 4px;">
+        <iframe 
+            src="https://www.youtube.com/embed/kUdpkIoRylk" 
+            title="Memories Project Demo"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <h3>Photos from presentation day</h3>
+    <img src="{{ '/images/memories/board.jpg' | relative_url }}" alt="Safe at first base">
+    <img src="{{ '/images/memories/shervin.jpg' | relative_url }}" alt="Turning a double play">
 </main>

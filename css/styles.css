@@ -300,3 +300,30 @@ ul.box-list li{
         flex: 0 0 100%; /* Stacks beautifully full-width on mobile */
     }
 }
+
+/* Base settings for top-level lists */
+main ul, 
+main ol {
+    padding-left: 2.5rem; /* Indents the top-level list slightly further inward than your <p> tags */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+main ul ul,
+main ul ol,
+main ol ol,
+main ol ul {
+    padding-left: 1.5rem; /* Compounds an extra 1.5rem padding step for EVERY level deep you go */
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Spacing between list items */
+main ul li, 
+main ol li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
