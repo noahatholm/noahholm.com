@@ -7,5 +7,31 @@ order: 3
 favourite: true
 ---
 <main>
-    
+    <h1><a class="link" href="https://github.com/noahatholm/noahholm.com">Github</a></h1>
+
+    <h2 class="markdown-text">History</h2>
+    <p>Back in 2024, I bought this domain, primarily so nobody else could have it. I didn't have any plan for the site other than potentially a portfolio later on down the line. I knew that you could deploy a simple static webpage for free on GitHub, so that is what I did, throwing together a very 90s site that contained various inside jokes amongst my friends and me.</p>
+
+    <img src="{{ '/images/website/bad-site.png' | relative_url }}" alt="Old Site Screenshot">
+
+    <p>The website remained like this for two years until recently. From late 2025-26, whilst applying for internships, I found myself doomscrolling LinkedIn significantly more. I was impressed by profiles with personal websites and was motivated to create my own.</p>
+
+    <h2 class="markdown-text">noahholm.com V2</h2>
+
+    <p>From viewing other people's sites, I had a simple idea of what features I wanted from them.</p>
+    <ul>
+        <li>A blog format where I can talk about my interests</li>
+        <li>A similar blog format for projects</li>
+        <li>A page visitor counter (90s style)</li>
+        <li>An interactive map showing the general location of where visitors are from</li>
+        <li>Zero running costs—the only cost should be domain renewal</li>
+        <li>A dynamically rendered site, so every page shouldn't be hardcoded</li>
+    </ul>
+
+    <p>I wasn't initially sure how to achieve a visitor counter and dynamic site all whilst running costs remained free, and I considered some serverless solutions that would be very cheap due to low traffic, but not quite the free ninety-nine I was looking for.</p>
+    <p>I had used Supabase for projects before, so I was familiar with BaaS and Row-Level Security, meaning I knew that I could use it to maintain my visitor counter for free without any hosted backend. For the dynamic site, the solution was right in front of me the whole time: GitHub Pages natively supports Jekyll, which allows you to build static webpages dynamically by embedding syntax into the HTML files. This did exactly what I wanted—i.e., being able to create a new blog post, then pushing that one file and having links to it automatically appear on my homepage.</p>
+
+    <p>I took heavy inspiration from <a href="https://tomcope.com/" class="link">this website</a> as it had similar features that I desired and a clean modern UI (something I struggle with).</p>
+
+    <p>As I write this, I'm still in the process of creating all the project pages, nor have I implemented the site visitor map yet. However, I am collecting visitor IPs for when I do get around to creating the map.</p>
 </main>

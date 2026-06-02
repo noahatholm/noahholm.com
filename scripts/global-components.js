@@ -38,7 +38,7 @@ class MyFooter extends HTMLElement {
             <i class="fab fa-steam"></i>
         </a>
         <!-- GitHub Button -->
-        <a href="https://github.com/noahatholm/noahholm.com" class="social-btn" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/noahatholm" class="social-btn" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i>
         </a>
         <p>© Noah Holm 2024 - ${new Date().getFullYear()} | All Rights Reserved</p>
