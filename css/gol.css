@@ -76,3 +76,22 @@
 #presets button:hover {
     background-color: #444;
 }
+
+
+.desktop{
+    display:block;
+}
+
+.mobile{
+    display:none;
+}
+
+@media (max-width: 1000px) {
+    .desktop{
+        display:none;
+    }
+
+    .mobile{
+        display:block;
+    }
+}
