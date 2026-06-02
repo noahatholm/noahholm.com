@@ -7,7 +7,7 @@ async function recordPageView() {
     let response;
     //Get users Information
     try{
-        response = await fetch('https://ipapi.co/json/');
+        response = await fetch('http://ip-api.com/json/');
 
         if(!response.ok){
             throw new Error("HTTP whilst fetching IP, status: ${response.status");
@@ -22,11 +22,11 @@ async function recordPageView() {
 
 
     const data = await response.json();
-    const userIp = data.ip; 
-    const userCountry = data.country_name;
+    const userIp = data.query; 
+    const userCountry = data.country;
     const userCity = data.city;
-    const lat = data.latitude;
-    const lon = data.longitude;
+    const lat = data.lat;
+    const lon = data.lon;
     const referrer = document.referrer;
 
     //Call supabase RPC

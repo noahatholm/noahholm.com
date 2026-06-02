@@ -11,10 +11,9 @@ favourite: false
     <link rel="stylesheet" href="{{ '/css/gol.css' | relative_url }}">
 
 </head>
-<main class="desktop">
+<main>
     <div id="game">
         <canvas id="gameCanvas" height="700" width="1000"></canvas>
-        <script src="scripts/life.js"></script>
     </div>
     <div class="options">
         <p id="iterations">Generation 0</p>
@@ -31,11 +30,4 @@ favourite: false
             <button onclick="customArray2()">Acorn</button>
         </div>
     </div>
-</main>
-
-<main class="mobile">
-    <h1 class="terminal-text">Nice Phone you got there 🫵🫵😹😹</h1>
-    <p>This page isn't optimised for narrow screens, so you're not allowed to see it :(</p>
-
-    <img src="{{ '/images/goofy-cat.webp' | relative_url }}" alt="Goofy cat">
 </main>

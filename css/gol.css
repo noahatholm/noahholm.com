@@ -77,21 +77,10 @@
     background-color: #444;
 }
 
-
-.desktop{
-    display:block;
+#gameCanvas {
+    max-width: 100%;
+    height: auto;    
+    display: block;   
+    margin: 1.5rem auto; 
 }
 
-.mobile{
-    display:none;
-}
-
-@media (max-width: 1000px) {
-    .desktop{
-        display:none;
-    }
-
-    .mobile{
-        display:block;
-    }
-}
