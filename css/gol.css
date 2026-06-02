@@ -9,7 +9,6 @@
 }
 
 .options {
-    max-width: 1000px;
     margin: 0 auto;
     padding: 1.5rem;
     
@@ -23,6 +22,11 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
+@media (max-width: 750px) {
+  .options {
+    flex-direction: column;
+  }
+}
 
 
 .options > p:nth-of-type(3) {
