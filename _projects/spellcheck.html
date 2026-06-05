@@ -1,0 +1,39 @@
+---
+layout: projects
+title: "Spellcheck"
+brief: "Python Spell Check & Auto-Complete using Higher-Order Markov Chains"
+description: "This project was born from my interest in stochastic models like Markov chains. It gave me the chance to explore them while improving my skills in data structures, algorithms, and natural language processing. "
+order: 5
+favourite: false
+---
+<main>
+
+<h1><a class="link" href="https://github.com/noahatholm/spellcheck">Github</a></h1>
+
+<h2 class="markdown-text">Features</h2>
+
+<h3>Fast Spell Checking</h3>
+<p>Uses a trie data structure for fast lookup and fuzzy matching</p>
+
+<h3>Smart Suggestions</h3>
+<p>Based on three factors</p>
+<ul>
+    <li>Fuzzy Matching: Uses a custom Levenshtein distance algorithm to find similar words via trie traversal</li>
+    <li>Context Awareness: Predicts the most likely next words using a Markov chain based on sentence structure</li>
+    <li>Frequency Bias: Prefers more commonly used English words to improve relevance</li>
+</ul>
+
+<h3>Self-Learning (Optional)</h3>
+<p>The model can be updated dynamically with each word typed to improve personalisation</p>
+
+
+<img src="https://camo.githubusercontent.com/bc631f987bfeb0df049ab5dc6d6210daf8022e3021ffb150001027da764f240a/68747470733a2f2f692e696d6775722e636f6d2f4a77665156474e2e676966" alt="spellchecking">
+
+<p>Different suggestions based on the previous context</p>
+<img src="https://camo.githubusercontent.com/27a63a4ce0d49b793ccc8876f0278ae1f6af8523d2908801fd12c1dc35830f62/68747470733a2f2f692e696d6775722e636f6d2f624445614256702e676966" alt="example gif">
+
+
+
+<p>This was a fun project to work on, however in hindsight I would've used a different language than python.</p>
+
+</main>
