@@ -9,7 +9,10 @@ class MyHeader extends HTMLElement {
 
     this.innerHTML = `
       <header>
-        <h1>Noah Holm</h1>
+        <audio id="based-god" src="/audio/lil_b.mp3"></audio>
+        <h1 onclick="playBasedGod()">Noah Holm</h1>
+        </button>
+
         <nav>
             <a href="${homeUrl}">Home</a>
             <a href="${blogUrl}">Posts</a>
@@ -48,6 +51,16 @@ class MyFooter extends HTMLElement {
     `;
   }
 }
+
+function playBasedGod() {
+    const audio = document.getElementById('based-god');
+    
+    // Reset to start if they click it multiple times
+    audio.currentTime = 0; 
+    audio.play().catch(error => {
+      console.log("Audio play blocked or failed:", error);
+    });
+  }
 
 // Register them with the browser
 customElements.define('my-header', MyHeader);
