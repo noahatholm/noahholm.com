@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   portfolio:
-    image: jekyll/jekyll:latest
+    image: docker.io/jekyll/jekyll:latest
     volumes:
       - .:/srv/jekyll
     ports:

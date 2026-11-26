@@ -1,0 +1,23 @@
+#map {
+height: 500px;
+width: 100%;
+border-radius: 8px;
+}
+
+.visitor-bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-family: monospace;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease;
+}
+.visitor-bubble:hover { transform: scale(1.1); }
+.visitor-bubble--small  { background: rgba(46, 204, 113, 0.85); font-size: 12px; } /* --secondary-color */
+.visitor-bubble--medium { background: rgba(230, 126, 34, 0.9);  font-size: 13px; }
+.visitor-bubble--large  { background: rgba(208, 60, 19, 0.9);   font-size: 15px; } /* --header-color */
