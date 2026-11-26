@@ -2,11 +2,25 @@
 layout: default
 title: "Noah Map"
 ---
+<head>
+    <script type="module" src="{{ '/scripts/map.js' | relative_url }}" defer></script>
+
+        <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        #map {
+        height: 500px;
+        width: 100%;
+        border-radius: 8px;
+        }
+    </style>
+</head>
 <main>
     <h1 class="terminal-text">Visitor Map</h1>   
 
     <p>I Track every (non bot) visitor to the site and store their rough location i.e city and country so that I create an interactive map of all visitors.</p>
 
 
-    <img src="https://i.redd.it/q0dd3k02unqb1.gif">
+    <div id="map"></div>
 </main>

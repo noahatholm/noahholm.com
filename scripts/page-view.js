@@ -1,7 +1,7 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js'
 
 // OH NO I LEFT MY API KEY IN MY FRONTEND PLS DON'T HACK ME 😿🙏
-const supabase = createClient('https://crhpcbmfxuoglasqsqxr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNyaHBjYm1meHVvZ2xhc3FzcXhyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkzOTk5MTIsImV4cCI6MjA5NDk3NTkxMn0.Lt2nz_sIpkTkzVVhXTQQWiIEuLwORRBEBdbkvnrt7pM')
+export const supabase = createClient('https://crhpcbmfxuoglasqsqxr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNyaHBjYm1meHVvZ2xhc3FzcXhyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkzOTk5MTIsImV4cCI6MjA5NDk3NTkxMn0.Lt2nz_sIpkTkzVVhXTQQWiIEuLwORRBEBdbkvnrt7pM')
 
 async function recordPageView() {
     let response;
