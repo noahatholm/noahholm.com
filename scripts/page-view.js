@@ -38,7 +38,9 @@ async function recordPageView() {
         p_city: userCity,
         p_lat: lat,
         p_lon: lon,
-        p_referrer: referrer
+        p_referrer: referrer,
+        p_asn: data.asn,   // e.g. "AS32934"
+        p_org: data.org    // e.g. "FACEBOOK"
     });
 
 }
